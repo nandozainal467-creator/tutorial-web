@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Utama</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #eef2f7, #dfe7f2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 90%;
+            max-width: 650px;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 14px;
+        }
+
+        th {
+            background: #4a6cf7;
+            color: white;
+            padding: 14px;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 18px;
+            text-align: center;
+            background: #f9fbff;
+            transition: 0.3s;
+        }
+
+        tr:nth-child(even) td {
+            background: #eef3ff;
+        }
+
+        tr:hover td {
+            background: #dfe7ff;
+            transform: scale(1.01);
+        }
+
+        a {
+            text-decoration: none;
+            color: #4a6cf7;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Menu Utama</h1>
+    <p>Silakan pilih menu untuk melanjutkan</p>
+
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Nama Menu</th>
+            <th>Aksi</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Halaman Utama</td>
+            <td><a href="#">Buka</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Data Diri</td>
+            <td><a href="#">Buka</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Galeri</td>
+            <td><a href="#">Buka</a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Kontak</td>
+            <td><a href="#">Buka</a></td>
+        </tr>
+    </table>
+
+    <footer>
+        © 2025 Menu Utama Website
+    </footer>
+</div>
+
+</body>
+</html>
