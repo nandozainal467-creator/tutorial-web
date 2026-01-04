@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendaftaran Santri | Pondok Hidayatul Mubtadi'in</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('IMG-20250808-W0039.JPG');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/* GLASS CONTAINER */
+.container{
+  max-width:900px;
+  width:100%;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  padding:30px;
+  color:#fff;
+  box-shadow:0 0 40px rgba(212,175,55,.4);
+  animation:fade 1s ease;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+h1{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  color:#d4af37;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  text-align:center;
+  font-size:14px;
+  margin-bottom:30px;
+  opacity:.9;
+}
+
+.section{
+  margin-bottom:30px;
+}
+
+.section h2{
+  color:#d4af37;
+  border-bottom:1px solid rgba(255,215,0,.4);
+  padding-bottom:5px;
+  margin-bottom:15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+input, select, textarea{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  background:rgba(255,255,255,.15);
+  color:#fff;
+}
+
+input::placeholder, textarea::placeholder{
+  color:#ddd;
+}
+
+label{
+  font-size:13px;
+  opacity:.9;
+}
+
+textarea{resize:none;height:90px}
+
+.photo-preview{
+  margin-top:10px;
+  text-align:center;
+}
+
+.photo-preview img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #d4af37;
+  display:none;
+}
+
+.checkbox{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-size:14px;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  background:linear-gradient(45deg,#d4af37,#ffd700);
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  color:#000;
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.03);
+  box-shadow:0 0 20px gold;
+}
+
+footer{
+  text-align:center;
+  margin-top:20px;
+  font-size:12px;
+  opacity:.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Pendaftaran Santri Baru</h1>
+<div class="subtitle">Pondok Pesantren Hidayatul Mubtadi'in</div>
+
+<form id="formPendaftaran">
+
+<!-- DATA SANTRI -->
+<div class="section">
+<h2>Data Santri</h2>
+<div class="grid">
+<div>
+<label>Nama Lengkap</label>
+<input required placeholder="Nama lengkap santri">
+</div>
+<div>
+<label>Tempat Lahir</label>
+<input required>
+</div>
+<div>
+<label>Tanggal Lahir</label>
+<input type="date" required>
+</div>
+<div>
+<label>Jenis Kelamin</label>
+<select required>
+<option value="">Pilih</option>
+<option>Laki-laki</option>
+<option>Perempuan</option>
+</select>
+</div>
+<div>
+<label>Alamat Lengkap</label>
+<textarea required></textarea>
+</div>
+</div>
+</div>
+
+<!-- ORANG TUA -->
+<div class="section">
+<h2>Data Orang Tua / Wali</h2>
+<div class="grid">
+<div>
+<label>Nama Ayah</label>
+<input required>
+</div>
+<div>
+<label>Pekerjaan Ayah</label>
+<input>
+</div>
+<div>
+<label>Nama Ibu</label>
+<input required>
+</div>
+<div>
+<label>No. HP Wali</label>
+<input type="tel" required placeholder="08xxxxxxxx">
+</div>
+</div>
+</div>
+
+<!-- PENDIDIKAN -->
+<div class="section">
+<h2>Data Pendidikan</h2>
+<div class="grid">
+<div>
+<label>Pendidikan Terakhir</label>
+<select>
+<option>SD / MI</option>
+<option>SMP / MTs</option>
+<option>SMA / MA</option>
+</select>
+</div>
+<div>
+<label>Asal Sekolah</label>
+<input>
+</div>
+</div>
+</div>
+
+<!-- FOTO -->
+<div class="section">
+<h2>Foto Santri</h2>
+<input type="file" accept="image/*" onchange="previewFoto(this)">
+<div class="photo-preview">
+<img id="preview">
+</div>
+</div>
+
+<!-- PERSETUJUAN -->
+<div class="section checkbox">
+<input type="checkbox" required>
+<span>Saya menyatakan data di atas benar dan siap mematuhi peraturan pondok.</span>
+</div>
+
+<button type="submit">DAFTAR SEKARANG</button>
+</form>
+
+<footer>
+© Pondok Hidayatul Mubtadi'in • Sistem Pendaftaran Digital
+</footer>
+</div>
+
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycby1L3_Gq7xnCCskYMxF7brmJLQRBUSMLQRT_vyL6AjLjbe3_eF3QlixGGKNvSLEDupk/exec";
+
+function previewFoto(input){
+  const img = document.getElementById('preview');
+  if(input.files[0]){
+    img.src = URL.createObjectURL(input.files[0]);
+    img.style.display = 'block';
+  }
+}
+
+document.getElementById("formPendaftaran").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const input = this.querySelectorAll("input");
+  const select = this.querySelectorAll("select");
+  const textarea = this.querySelector("textarea");
+
+  const data = {
+    nama_lengkap: input[0].value,
+    tempat_lahir: input[1].value,
+    tanggal_lahir: input[2].value,
+    jenis_kelamin: select[0].value,
+    alamat_lengkap: textarea.value,
+    nama_ayah: input[3].value,
+    pekerjaan_ayah: input[4].value,
+    nama_ibu: input[5].value,
+    hp_wali: input[6].value,
+    pendidikan_terakhir: select[1].value,
+    asal_sekolah: input[7].value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(() => {
+    alert("✅ Pendaftaran berhasil!");
+    this.reset();
+    document.getElementById('preview').style.display = 'none';
+  })
+  .catch(() => alert("❌ Gagal mengirim data"));
+});
+</script>
+
+
+</body>
+</html>
